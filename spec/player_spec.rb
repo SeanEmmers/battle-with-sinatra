@@ -21,4 +21,12 @@ describe Player do
       expect { sean.receive_damage }.to change { sean.hit_points }.by(-10)
     end
   end
+
+  describe '.attack' do
+    it 'damages the player' do
+      expect(sean).to receive(:receive_damage)
+      tarun.attack(sean)
+    end
+  end
+  
 end
